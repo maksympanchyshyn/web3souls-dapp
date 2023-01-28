@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import { Navbar, Button } from '@nextui-org/react';
 
+import useBrowserWallet from '@/hooks/useBrowserWallet';
+
 const NavbarComponent = () => {
+  const { account, connect } = useBrowserWallet();
   return (
     <Navbar>
       <Navbar.Brand>
@@ -9,9 +12,15 @@ const NavbarComponent = () => {
       </Navbar.Brand>
       <Navbar.Content>
         <Navbar.Item>
-          <Button color="gradient" auto>
-            Connect Wallet
-          </Button>
+          {account ? (
+            <Button color="gradient" auto ghost>
+              {`${account.slice(0, 6)}..${account.slice(-4)}`}
+            </Button>
+          ) : (
+            <Button color="gradient" auto onClick={connect}>
+              Connect Wallet
+            </Button>
+          )}
         </Navbar.Item>
       </Navbar.Content>
     </Navbar>
