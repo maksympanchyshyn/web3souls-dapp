@@ -1,7 +1,14 @@
 import Head from 'next/head';
-import { Card, Container, Grid, Text } from '@nextui-org/react';
+import Image from 'next/image';
+
+import { Container, Row, Col, GridContainer, GridItem } from '@/components/Layout';
 
 export default function Home() {
+  const featuredSouls = [
+    { id: 1, img: '/badge-placeholder.svg' },
+    { id: 2, img: '/badge-placeholder.svg' },
+    { id: 3, img: '/badge-placeholder.svg' },
+  ];
   return (
     <>
       <Head>
@@ -12,27 +19,30 @@ export default function Home() {
       </Head>
 
       <Container>
-        <Grid.Container gap={6} justify="center">
-          <Grid xs={6} direction="column">
-            <Card>
-              <Text h1>Proof of Achievements</Text>
-              <Text h1 css={{ textGradient: '45deg, $blue600 -20%, $pink600 50%' }}>
-                in Your Soul
-              </Text>
-              <Text h3>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</Text>
-            </Card>
-          </Grid>
-          <Grid xs={6}>
-            <Card>
-              <Card.Body>Place some nice image here</Card.Body>
-            </Card>
-          </Grid>
-          <Grid xs={12}>
-            <Card>
-              <Card.Body>Achievements showup goes here</Card.Body>
-            </Card>
-          </Grid>
-        </Grid.Container>
+        <Row justify="space-between">
+          <Col>
+            <p>Proof of Achievementss</p>
+            <p>In your Soul</p>
+            <p>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</p>
+          </Col>
+          <Col>Place some nice image here</Col>
+        </Row>
+
+        <GridContainer gap={14} justify="space-between">
+          <GridItem size={7} direction="column">
+            <p>Proof of Achievementss</p>
+            <p>In your Soul</p>
+            <p>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</p>
+          </GridItem>
+          <GridItem size={5}>Place some nice image here</GridItem>
+        </GridContainer>
+        <GridContainer gap={14} justify="center">
+          {featuredSouls.map((soul) => (
+            <GridItem key={soul.id}>
+              <Image src={soul.img} alt="badge-img" width={200} height={300} />
+            </GridItem>
+          ))}
+        </GridContainer>
       </Container>
     </>
   );
