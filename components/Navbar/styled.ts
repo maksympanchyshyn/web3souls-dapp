@@ -19,6 +19,11 @@ export const NavbarBrand = styled(Link)`
   cursor: pointer;
 `;
 
-export const NavbarContent = styled.div``;
+export const NavbarContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const NavbarItem = styled.div``;
+export const NavbarItem = styled.div`
+  display: flex;
+`;

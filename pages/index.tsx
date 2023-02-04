@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Container, Row, Col, GridContainer, GridItem } from '@/components/Layout';
+import { Container, GridContainer, GridItem } from '@/components/Layout';
+import { Heading, Paragraph } from '@/components/Text';
 
 export default function Home() {
   const featuredSouls = [
@@ -13,28 +14,22 @@ export default function Home() {
     <>
       <Head>
         <title>Web3Souls</title>
+        <meta charSet="UTF-8" />
         <meta name="description" content="Collect your on-chain soulbound achievements at Web3Souls" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <Container>
-        <Row justify="space-between">
-          <Col>
-            <p>Proof of Achievementss</p>
-            <p>In your Soul</p>
-            <p>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</p>
-          </Col>
-          <Col>Place some nice image here</Col>
-        </Row>
-
         <GridContainer gap={14} justify="space-between">
           <GridItem size={7} direction="column">
-            <p>Proof of Achievementss</p>
-            <p>In your Soul</p>
-            <p>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</p>
+            <Heading>Proof of Achievementss</Heading>
+            <Heading>In your Soul</Heading>
+            <Paragraph>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</Paragraph>
           </GridItem>
-          <GridItem size={5}>Place some nice image here</GridItem>
+          <GridItem size={5}>
+            <Image src="/badge-placeholder.svg" alt="badge-img" width={280} height={420} />
+          </GridItem>
         </GridContainer>
         <GridContainer gap={14} justify="center">
           {featuredSouls.map((soul) => (
