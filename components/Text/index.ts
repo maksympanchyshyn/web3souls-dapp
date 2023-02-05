@@ -1,9 +1,28 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Heading = styled.h1`
-  font-size: 48px;
+export type TextProps = {
+  gradient?: string;
+  size?: number;
+};
+
+const TextStyles = css`
+  font-size: ${(props: TextProps) => props.size || 18}px;
+
+  ${(props: TextProps) =>
+    props.gradient &&
+    css`
+      background-image: ${(props: TextProps) => props.gradient};
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    `}
 `;
 
-export const Paragraph = styled.p`
-  font-size: 18px;
+export const Heading = styled.h1<TextProps>`
+  ${TextStyles}
+  font-size: ${(props: TextProps) => props.size || 48}px;
+`;
+
+export const Paragraph = styled.p<TextProps>`
+  ${TextStyles}
 `;

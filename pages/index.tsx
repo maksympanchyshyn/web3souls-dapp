@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Container, GridContainer, GridItem } from '@/components/Layout';
+import { Container, GridContainer, GridItem, Row, Spacer } from '@/components/Layout';
 import { Heading, Paragraph } from '@/components/Text';
+import { Button } from '@/components/Button';
 
 export default function Home() {
   const featuredSouls = [
@@ -23,14 +24,25 @@ export default function Home() {
       <Container>
         <GridContainer gap={14} justify="space-between">
           <GridItem size={7} direction="column">
-            <Heading>Proof of Achievementss</Heading>
-            <Heading>In your Soul</Heading>
+            <Heading>Proof of Achievements</Heading>
+            <Heading gradient="linear-gradient(112deg, #06b7db -63.59%, #ff4ecd -20.3%, #0072f5 70.46%);">
+              In your Soul
+            </Heading>
+            <Spacer y={8} />
             <Paragraph>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</Paragraph>
+            <Spacer y={16} />
+            <Row>
+              <Button>Explore souls</Button>
+            </Row>
           </GridItem>
           <GridItem size={5}>
             <Image src="/badge-placeholder.svg" alt="badge-img" width={280} height={420} />
           </GridItem>
         </GridContainer>
+        <Spacer y={32} />
+        <Row justify="center">
+          <Heading size={28}>Notable souls</Heading>
+        </Row>
         <GridContainer gap={14} justify="center">
           {featuredSouls.map((soul) => (
             <GridItem key={soul.id}>

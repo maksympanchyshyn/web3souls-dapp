@@ -56,12 +56,10 @@ export const Container = styled.div`
 export const Col = styled(FlexDiv)<FlexProps>`
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 `;
 
 export const Row = styled(FlexDiv)<FlexProps>`
   flex-direction: row;
-  border: 1px solid green;
 `;
 
 export const GridContainer = styled(FlexDiv)<GridContainerProps>`
@@ -73,4 +71,13 @@ export const GridContainer = styled(FlexDiv)<GridContainerProps>`
 
 export const GridItem = styled(FlexDiv)<GridItemProps>`
   width: ${(props: GridItemProps) => getGridItemWidth(props.size)};
+`;
+
+export type SpacerProps = {
+  x?: number;
+  y?: number;
+};
+
+export const Spacer = styled.div<SpacerProps>`
+  margin: ${(props: SpacerProps) => props.y || 1}px ${(props: SpacerProps) => props.x || 1}px;
 `;
