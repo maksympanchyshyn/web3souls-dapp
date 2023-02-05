@@ -4,8 +4,11 @@ import Image from 'next/image';
 import { Container, GridContainer, GridItem, Row, Spacer } from '@/components/Layout';
 import { Heading, Paragraph } from '@/components/Text';
 import { Button } from '@/components/Button';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+
   const featuredSouls = [
     { id: 1, img: '/badge-placeholder.svg' },
     { id: 2, img: '/badge-placeholder.svg' },
@@ -32,7 +35,7 @@ export default function Home() {
             <Paragraph>Collect achievement badges as Soulbound NFTs and build your on-chain reputation</Paragraph>
             <Spacer y={16} />
             <Row>
-              <Button>Explore souls</Button>
+              <Button onClick={() => router.push('/souls')}>Explore souls</Button>
             </Row>
           </GridItem>
           <GridItem size={5}>
