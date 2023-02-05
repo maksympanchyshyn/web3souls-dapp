@@ -25,6 +25,7 @@ export default function Home() {
       </Head>
 
       <Container>
+        <Spacer y={18} />
         <GridContainer gap={14} justify="space-between">
           <GridItem size={7} direction="column">
             <Heading>Proof of Achievements</Heading>

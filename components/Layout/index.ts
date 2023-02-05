@@ -37,19 +37,22 @@ export const FlexDiv = styled.div<FlexProps>`
 
 export const GlobalContainer = styled.div`
   min-height: 100vh;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  position: relative;
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 1280px;
-  & > * {
-    margin: 12px 0;
+  margin: auto;
+  padding-bottom: 76px;
+
+  @media only screen and (max-width: 1281px) {
+    width: 960px;
+  }
+
+  @media only screen and (max-width: 961px) {
+    width: 768px;
   }
 `;
 
