@@ -12,6 +12,13 @@ export const Wrapper = styled(Link)`
   display: flex;
   align-items: center;
   padding: 0 16px;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    border: 2px solid #319f6487;
+    box-shadow: #2a7a4f57 0px 4px 12px 0px;
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const IconWrapper = styled.div`
