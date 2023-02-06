@@ -9,3 +9,30 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Network {
+  id                 Int     @id
+  name                    String  @unique
+  icon                    String
+  souls                   Soul[]                  
+}
+
+model SoulCategory {
+  id                      Int     @id @default(autoincrement())
+  name                    String  @unique
+  souls                   Soul[]
+}
+
+model Soul {
+  id                      Int     @id @default(autoincrement())
+  name                    String  @unique
+  description             String
+  eligibilityDescription  String
+  image                   String
+  icon                    String
+  project                 String
+  category                SoulCategory @relation(fields: [categoryId], references: [id])
+  categoryId              Int
+  network                 Network @relation(fields: [networkId], references: [id])
+  networkId               Int
+}
