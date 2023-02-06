@@ -21,7 +21,7 @@ export const Card = styled.div<CardProps>`
 
 export const CardBody = styled.div`
   border-radius: 32px;
-  background: #16181a;
+  background: #00000036;
   display: flex;
   justify-content: center;
   padding: 12px;

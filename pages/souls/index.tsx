@@ -1,11 +1,65 @@
 import Head from 'next/head';
-import Image from 'next/image';
 
-import { Container, GridContainer, GridItem, Row, Spacer } from '@/components/Layout';
-import { Heading, Paragraph } from '@/components/Text';
-import { Button } from '@/components/Button';
+import { Col, Container, Spacer } from '@/components/Layout';
+import { Card, CardBody } from '@/components/Card';
+import { SoulPreview } from '@/components/SoulPreview';
 
 export default function ExploreSouls() {
+  const souls = [
+    {
+      id: 1,
+      name: 'Arbitrum Newbie',
+      description:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, facilis excepturi eos ipsa quas quis saepe doloribus illo odit nihil possimus. Iusto iure at ipsum eius quae! Libero, possimus id.',
+      eligibilyDescription: 'Created at least 1 transaction on Arbitrum One',
+      image: '/badge-placeholder.svg',
+      icon: '/badge-icon-example.svg',
+      project: 'Arbitrum',
+      category: 'General',
+      network: 'Arbitrum One',
+      holders: 1000,
+    },
+    {
+      id: 2,
+      name: 'Arbitrum Common User',
+      description:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, facilis excepturi eos ipsa quas quis saepe doloribus illo odit nihil possimus. Iusto iure at ipsum eius quae! Libero, possimus id.',
+      eligibilyDescription: 'Created 5+ transactions on Arbitrum One',
+      image: '/badge-placeholder.svg',
+      icon: '/badge-icon-example.svg',
+      project: 'Arbitrum',
+      category: 'General',
+      network: 'Arbitrum One',
+      holders: 1000,
+    },
+    {
+      id: 3,
+      name: 'Arbitrum Uncommon User',
+      description:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, facilis excepturi eos ipsa quas quis saepe doloribus illo odit nihil possimus. Iusto iure at ipsum eius quae! Libero, possimus id.',
+      eligibilyDescription: 'Created 20+ transactions on Arbitrum One',
+      image: '/badge-placeholder.svg',
+      icon: '/badge-icon-example.svg',
+      project: 'Arbitrum',
+      category: 'General',
+      network: 'Arbitrum One',
+      holders: 1000,
+    },
+    {
+      id: 4,
+      name: 'Arbitrum Rare User',
+      description:
+        'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, facilis excepturi eos ipsa quas quis saepe doloribus illo odit nihil possimus. Iusto iure at ipsum eius quae! Libero, possimus id.',
+      eligibilyDescription: 'Created 50+ transactions on Arbitrum One',
+      image: '/badge-placeholder.svg',
+      icon: '/badge-icon-example.svg',
+      project: 'Arbitrum',
+      category: 'General',
+      network: 'Arbitrum One',
+      holders: 1000,
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -16,7 +70,18 @@ export default function ExploreSouls() {
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <Container>Explore Souls Page</Container>
+      <Container>
+        <Spacer y={20} />
+        <Card>
+          <CardBody>
+            <Col>
+              {souls.map((soul) => (
+                <SoulPreview key={soul.id} soul={soul} />
+              ))}
+            </Col>
+          </CardBody>
+        </Card>
+      </Container>
     </>
   );
 }

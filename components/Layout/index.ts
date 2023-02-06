@@ -59,6 +59,7 @@ export const Container = styled.div`
 export const Col = styled(FlexDiv)<FlexProps>`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const Row = styled(FlexDiv)<FlexProps>`
