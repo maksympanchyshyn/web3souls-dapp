@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import { Col, Container, GridContainer, GridItem, Row, Spacer } from '@/components/Layout';
-import { Heading, Paragraph } from '@/components/Text';
+import { Container, GridContainer, GridItem, Row, Spacer } from '@/components/Layout';
+import { Heading } from '@/components/Text';
 import { Button } from '@/components/Button';
 import { Card, CardBody } from '@/components/Card';
 import { Divider } from '@/components/Divider';
-import { Label, SoulInfoWrapper, Value } from '@/components/SoulInfo';
+import { Label, SoulDescription, SoulInfoWrapper, Value } from '@/components/SoulInfo';
 
 export default function SoulPage() {
   const soul = {
@@ -37,44 +37,39 @@ export default function SoulPage() {
           <GridItem size={7} direction="column">
             <Row>
               <Heading>{soul.name}</Heading>
-              <Spacer y={8} />
-              <Paragraph>{soul.description}</Paragraph>
-              <Spacer y={20} />
+              <SoulDescription>{soul.description}</SoulDescription>
             </Row>
+            <Spacer y={20} />
             <Divider />
             <Spacer y={20} />
-            <Col>
-              <Row>
-                <SoulInfoWrapper>
-                  <Label>Category</Label>
-                  <Value>{soul.category}</Value>
-                </SoulInfoWrapper>
-                <SoulInfoWrapper>
-                  <Label>Network</Label>
-                  <Value>{soul.network}</Value>
-                </SoulInfoWrapper>
-              </Row>
-              <Spacer y={12} />
-              <Row>
-                <SoulInfoWrapper>
-                  <Label>Project</Label>
-                  <Value>{soul.project}</Value>
-                </SoulInfoWrapper>
-                <SoulInfoWrapper>
-                  <Label>Holders</Label>
-                  <Value>{soul.holders}</Value>
-                </SoulInfoWrapper>
-              </Row>
-            </Col>
+            <Row>
+              <SoulInfoWrapper>
+                <Label>Category</Label>
+                <Value>{soul.category}</Value>
+              </SoulInfoWrapper>
+              <SoulInfoWrapper>
+                <Label>Network</Label>
+                <Value>{soul.network}</Value>
+              </SoulInfoWrapper>
+            </Row>
+            <Spacer y={12} />
+            <Row>
+              <SoulInfoWrapper>
+                <Label>Project</Label>
+                <Value>{soul.project}</Value>
+              </SoulInfoWrapper>
+              <SoulInfoWrapper>
+                <Label>Holders</Label>
+                <Value>{soul.holders}</Value>
+              </SoulInfoWrapper>
+            </Row>
           </GridItem>
           <GridItem size={5} direction="column">
-            <Row>
-              <Card>
-                <CardBody>
-                  <Image src={soul.image} alt="badge-img" width={450} height={450} />
-                </CardBody>
-              </Card>
-            </Row>
+            <Card>
+              <CardBody>
+                <Image src={soul.image} alt="badge-img" width={450} height={450} />
+              </CardBody>
+            </Card>
             <Spacer y={8} />
             <Button rounded>Check eligibility</Button>
           </GridItem>

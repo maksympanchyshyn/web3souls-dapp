@@ -7,7 +7,6 @@ export const NavbarContainer = styled.nav`
   width: 100%;
   height: 76px;
   padding: 0 84px;
-  border-bottom: 1px solid #eee;
 `;
 
 export const NavbarBrand = styled(Link)`

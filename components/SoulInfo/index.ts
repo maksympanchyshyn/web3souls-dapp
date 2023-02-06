@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+export const SoulDescription = styled.p`
+  font-size: 18px;
+  height: 72px;
+  margin-top: 12px;
+`;
+
 export const SoulInfoWrapper = styled.div`
   min-width: 210px;
 `;

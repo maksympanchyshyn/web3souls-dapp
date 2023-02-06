@@ -5,8 +5,6 @@ export type CardProps = {
 };
 
 export const Card = styled.div<CardProps>`
-  background: #16181a;
-  border-radius: 32px;
   width: 100%;
 
   ${(props: CardProps) =>
@@ -22,6 +20,8 @@ export const Card = styled.div<CardProps>`
 `;
 
 export const CardBody = styled.div`
+  border-radius: 32px;
+  background: #16181a;
   display: flex;
   justify-content: center;
   padding: 12px;
