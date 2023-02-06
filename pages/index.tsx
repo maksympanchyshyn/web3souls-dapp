@@ -5,6 +5,7 @@ import { Container, GridContainer, GridItem, Row, Spacer } from '@/components/La
 import { Heading, Paragraph } from '@/components/Text';
 import { Button } from '@/components/Button';
 import { useRouter } from 'next/router';
+import { Card } from '@/components/Card';
 
 export default function Home() {
   const router = useRouter();
@@ -47,10 +48,13 @@ export default function Home() {
         <Row justify="center">
           <Heading size={28}>Notable souls</Heading>
         </Row>
-        <GridContainer gap={14} justify="center">
+        <Spacer y={8} />
+        <GridContainer gap={16} justify="center">
           {featuredSouls.map((soul) => (
             <GridItem key={soul.id}>
-              <Image src={soul.img} alt="badge-img" width={200} height={300} />
+              <Card isPressable onClick={() => router.push(`/souls/${soul.id}`)}>
+                <Image src={soul.img} alt="badge-img" width={220} height={330} />
+              </Card>
             </GridItem>
           ))}
         </GridContainer>
