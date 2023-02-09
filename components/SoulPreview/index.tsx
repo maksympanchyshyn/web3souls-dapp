@@ -2,23 +2,9 @@ import Image from 'next/image';
 import { Heading, Paragraph } from '@/components/Text';
 
 import { IconWrapper, Wrapper } from './styled';
+import { Soul } from '@prisma/client';
 
-export type Soul = {
-  id: number;
-  name: string;
-  description: string;
-  eligibilyDescription: string;
-  image: string;
-  icon: string;
-  project: string;
-  category: string;
-  network: string;
-  holders: number;
-};
-
-export type SoulPreviewProps = {
-  soul: Soul;
-};
+export type SoulPreviewProps = { soul: Soul };
 
 export const SoulPreview = ({ soul }: SoulPreviewProps) => {
   return (
@@ -28,7 +14,7 @@ export const SoulPreview = ({ soul }: SoulPreviewProps) => {
       </IconWrapper>
       <div>
         <Heading size={18}>{soul.name}</Heading>
-        <Paragraph size={12}>{soul.eligibilyDescription}</Paragraph>
+        <Paragraph size={12}>{soul.eligibilityDescription}</Paragraph>
       </div>
     </Wrapper>
   );
